@@ -1,0 +1,58 @@
+<title>WeatherX - Your favourite website to see the weather</title>
+<section class="vh-100">
+    <div class="container py-5 h-100">
+
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-8 col-lg-6 col-xl-4">
+
+                <h3 class="mb-4 pb-2 fw-normal">Check the current weather</h3>
+                <form method="post">
+                    <div class="input-group rounded mb-3">
+                        <input
+                            class="form-control rounded"
+                            placeholder="City"
+                            name="city"
+                        />
+                        <button
+                            class="input-group-text fw-bold mx-2 btn btn-outline-primary"
+                        >Check!</button>
+                    </div>
+                </form>
+                {{#if result}}
+                    {{#if error}}
+                        Some error occured
+
+                    {{else}}
+                        {{#if wrong}}
+                            The city that you have entered does not exists.
+                        {{else}}
+                            <div class="card shadow-0 border">
+                                <div class="card-body p-4">
+
+                                    <h4 class="mb-1 sfw-normal">{{name}},
+                                        {{country}}</h4>
+                                    <p class="mb-2">Current temperature:
+                                        <strong>{{temp}}°F</strong></p>
+                                    <p>Feels like:
+                                        <strong>{{feels_like}}°F</strong></p>
+                                    <p>Max:
+                                        <strong>{{max}}°F</strong>, Min:
+                                        <strong>{{min}}°F</strong></p>
+
+                                    <div
+                                        class="d-flex flex-row align-items-center"
+                                    >
+                                        <p class="mb-0 me-4">{{desc}}</p>
+                                        <img src="{{weather_img}}" alt="" />
+                                    </div>
+
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/if}}
+                {{/if}}
+            </div>
+        </div>
+
+    </div>
+</section>
