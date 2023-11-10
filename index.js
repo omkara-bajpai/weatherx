@@ -17,7 +17,7 @@ app.post("/", async function (req, res) {
     city = req.body.city;
     try {
         const response = await fetch(
-            `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=143454aa39bbe3442a890cdbf3f9db36`
+            `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=API_KEY`
         );
         const response_json = await response.json();
         if (response_json["message"] == "city not found") {
